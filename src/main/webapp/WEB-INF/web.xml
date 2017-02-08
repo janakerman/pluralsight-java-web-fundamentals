@@ -5,6 +5,32 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
          http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
+    <!-- Application wide params - this overrides any servlet params -->
+    <context-param>
+        <param-name>jans-param</param-name>
+        <param-value>jans-value</param-value>
+    </context-param>
+
+    <!-- When defining parameters, we may not want these hard coded into a class as defaults. We may want to feed them in another using
+    this config instead. I think this means you can't use the new annotations for your mappings! -->
+    <servlet>
+        <servlet-name>SimpleServlet</servlet-name>
+        <servlet-class>com.pluralsight.SimpleServlet</servlet-class>
+        <init-param>
+            <param-name>ProductName</param-name>
+            <param-value>Yet another product name (I'm overriding the params set on the annotation!)</param-value>
+        </init-param>
+    </servlet>
+
+    <!-- Note that we're defining the url pattern twice here - in annotations & here. The name value on the annotation links up
+    to the server-name here. If these didn't match up we'd be trying to map two servlets to the same route.
+    Not sure I like the duplication here! -->
+    <servlet-mapping>
+        <servlet-name>SimpleServlet</servlet-name>
+        <url-pattern>/home</url-pattern> <!-- This even overrides any annotations on the servlets too (.do is overridden). -->
+    </servlet-mapping>
+    
+    
     <!-- I've used annotations here as it's newer - this is the equiv in web.xml. -->
     <!--<servlet>-->
         <!--<servlet-name>Simple</servlet-name>-->
