@@ -15,6 +15,26 @@ public class SimpleServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("Hello Jan!");
+        String name = req.getParameter("name");
+
+        if (name == null || name.isEmpty()) {
+            resp.getWriter().write("Enter a name value");
+            return;
+        }
+        
+        resp.setContentType("text/xml");
+        resp.getWriter().write("<name>" + name + "</name>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+
+        if (name == null || name.isEmpty()) {
+            resp.sendRedirect("index.jsp");
+            return;
+        }
+
+        resp.getWriter().printf("Hello %s", name);
     }
 }

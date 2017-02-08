@@ -1,5 +1,7 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+    <form action="home" method="post">
+        Name: <input type="text" name="name" /><input type="submit" value="Enter name" />
+    </form>
 </body>
 </html>
