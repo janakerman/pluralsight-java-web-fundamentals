@@ -16,7 +16,8 @@ public class ControllerServlet extends HttpServlet {
     public void init() throws ServletException {
         // This is an example of setting global scope
         ApplicationSettings applicationSettings = new ApplicationSettings();
-        applicationSettings.setFormCssClass("blueUser");
+        applicationSettings.setFormCssClass(new CSSClass("redUser"));
+        applicationSettings.setTabNames(new String[]{"Jan", "John", "James"});
         getServletContext().setAttribute("app", applicationSettings);
     }
 

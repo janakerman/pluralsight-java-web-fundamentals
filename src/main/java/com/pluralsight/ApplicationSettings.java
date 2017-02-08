@@ -5,13 +5,22 @@ package com.pluralsight;
  */
 public class ApplicationSettings {
 
-    private String formCssClass;
+    private CSSClass formCssClass;
+    private String[] tabNames;
 
-    public String getFormCssClass() {
+    public CSSClass getFormCssClass() {
         return formCssClass;
     }
 
-    public void setFormCssClass(String fromCssClass) {
+    public void setFormCssClass(CSSClass fromCssClass) {
         this.formCssClass = fromCssClass;
+    }
+
+    public String[] getTabNames() {
+        return tabNames;
+    }
+
+    public void setTabNames(String[] tabNames) {
+        this.tabNames = tabNames;
     }
 }
