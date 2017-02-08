@@ -13,6 +13,14 @@ import java.io.IOException;
 public class ControllerServlet extends HttpServlet {
 
     @Override
+    public void init() throws ServletException {
+        // This is an example of setting global scope
+        ApplicationSettings applicationSettings = new ApplicationSettings();
+        applicationSettings.setFormCssClass("blueUser");
+        getServletContext().setAttribute("app", applicationSettings);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
     }
