@@ -10,6 +10,6 @@
         System.out.println(user.getName());
     %>
 
-    <p>Welcome <%= user.getName() %>!</p>
+    <p>Welcome ${user.name}!</p>
 </body>
 </html>
