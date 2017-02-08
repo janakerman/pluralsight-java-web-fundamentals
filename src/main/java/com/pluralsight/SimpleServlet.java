@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by jakerman on 08/02/2017.
  */
-@WebServlet("/home")
+@WebServlet(urlPatterns = {"/home", "*.do"})
 public class SimpleServlet extends HttpServlet {
 
     @Override

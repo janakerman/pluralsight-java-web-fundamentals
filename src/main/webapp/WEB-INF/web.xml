@@ -5,14 +5,15 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
          http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <servlet>
-        <servlet-name>Simple</servlet-name>
-        <servlet-class>com.pluralsight.SimpleServlet</servlet-class>
-    </servlet>
+    <!-- I've used annotations here as it's newer - this is the equiv in web.xml. -->
+    <!--<servlet>-->
+        <!--<servlet-name>Simple</servlet-name>-->
+        <!--<servlet-class>com.pluralsight.SimpleServlet</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>Simple</servlet-name>
-        <url-pattern>*.do</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>Simple</servlet-name>-->
+        <!--<url-pattern>*.do</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 </web-app>
