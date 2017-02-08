@@ -25,7 +25,7 @@ public class ControllerServlet extends HttpServlet {
 //        req.getSession().setAttribute("user", user); // Session scope - one user and browser
         req.setAttribute("user", user); // Request scope - just this request
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
         dispatcher.forward(req, resp);
     }
 }
