@@ -11,6 +11,18 @@
         <param-value>jans-value</param-value>
     </context-param>
 
+    <!-- Going to .do takes us through our controller servlet. -->
+    <servlet>
+        <servlet-name>ControllerServlet</servlet-name>
+        <servlet-class>com.pluralsight.ControllerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+
     <!-- When defining parameters, we may not want these hard coded into a class as defaults. We may want to feed them in another using
     this config instead. I think this means you can't use the new annotations for your mappings! -->
     <servlet>
@@ -21,6 +33,8 @@
             <param-value>Yet another product name (I'm overriding the params set on the annotation!)</param-value>
         </init-param>
     </servlet>
+
+
 
     <!-- Note that we're defining the url pattern twice here - in annotations & here. The name value on the annotation links up
     to the server-name here. If these didn't match up we'd be trying to map two servlets to the same route.
